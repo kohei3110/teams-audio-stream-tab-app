@@ -1,7 +1,7 @@
 {
     "id": "${{AAD_APP_OBJECT_ID}}",
     "appId": "${{AAD_APP_CLIENT_ID}}",
-    "name": "teams-audio-stream-tab-aad",
+    "name": "Audio Stream Meeting App",
     "accessTokenAcceptedVersion": 2,
     "signInAudience": "AzureADMyOrg",
     "optionalClaims": {
@@ -22,6 +22,14 @@
             "resourceAccess": [
                 {
                     "id": "User.Read",
+                    "type": "Scope"
+                },
+                {
+                    "id": "OnlineMeetings.Read",
+                    "type": "Scope"
+                },
+                {
+                    "id": "OnlineMeetings.ReadWrite",
                     "type": "Scope"
                 }
             ]
