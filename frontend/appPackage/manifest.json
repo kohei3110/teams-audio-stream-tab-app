@@ -15,17 +15,30 @@
         "outline": "outline.png"
     },
     "name": {
-        "short": "teams-audio-stream-tab${{APP_NAME_SUFFIX}}",
-        "full": "Full name for teams-audio-stream-tab"
+        "short": "Audio Stream Meeting App${{APP_NAME_SUFFIX}}",
+        "full": "Teams Audio Stream Meeting Application"
     },
     "description": {
-        "short": "Short description of teams-audio-stream-tab",
-        "full": "Full description of teams-audio-stream-tab"
+        "short": "Capture and stream audio in Teams meetings",
+        "full": "A Teams meeting application that allows capturing audio stream during meetings and transmitting it via WebSocket for processing."
     },
     "accentColor": "#FFFFFF",
     "bots": [],
     "composeExtensions": [],
-    "configurableTabs": [],
+    "configurableTabs": [
+        {
+            "configurationUrl": "${{TAB_ENDPOINT}}/index.html#/config",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team",
+                "groupchat"
+            ],
+            "context": [
+                "meetingSidePanel",
+                "meetingStage"
+            ]
+        }
+    ],
     "staticTabs": [
         {
             "entityId": "index",
@@ -47,5 +60,9 @@
     "webApplicationInfo": {
         "id": "${{AAD_APP_CLIENT_ID}}",
         "resource": "api://${{TAB_DOMAIN}}/${{AAD_APP_CLIENT_ID}}"
+    },
+    "meetingExtensionDefinition": {
+        "canShareInMeeting": true,
+        "supportsStreaming": true
     }
 }
